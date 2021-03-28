@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/default.css">
+    <title>JSQuiz</title>
+</head>
+<body>
+
+    <h1>JSQuiz</h1>
+
+    <nav class="menu">
+        <a href="/all">All quiz</a>
+        <a href="/create">Create a quiz</a>
+        <a href="https://github.com/frederikblais/JSQuiz" target="_blank">GitHub</a>
+    </nav>
+    <br>
+
+    <h2>Popular quizes</h2>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Tried</th>
+          <th></th>
+        </tr>
+        {{#quiz}}
+        <tr>
+          <td>{{quiz_name}}</td>
+          <td>{{category}}</td>
+          <td>{{tried}}</td>
+          <td><button>Start</button></td>
+        </tr>
+        {{/quiz}}
+      </table >
+      <br>
+
+    <h2>Create a Quiz</h2>
+    <a href="/create">
+      <button>+</button>
+    </a>
+    <br>
+
+    <script src="../scripts/trending.js"></script>
+</body>
+<footer>
+  <p>Made by: Frederik Blais</p>
+</footer>
+</html>
