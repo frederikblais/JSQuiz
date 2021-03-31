@@ -18,18 +18,47 @@ db.once('open', function(){
 });
 
 // create schema
-/*let personSchema = new mongoose.Schema({
-    name:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    age: Number
-});*/
+let questionSchema = new mongoose.Schema({
+    quiz_name: String,
+    category: String,
+    tried: Number,
+    question_1: String,
+    question_2: String,
+    question_3: String,
+    good_answer_1: String,
+    good_answer_2: String,
+    good_answer_3: String,
+    bad_answer_1: String,
+    bad_answer_11: String,
+    bad_answer_2: String,
+    bad_answer_22: String,
+    bad_answer_3: String,
+    bad_answer_33: String
+});
 
-// create model
-//let PersonModel = mongoose.model('Person', personSchema);
+function post(questionList){
+    // create model
+    const questionModel = mongoose.model('Question', questionSchema);
 
+    let question = new questionModel({
+        quiz_name: questionList[0],
+        category: questionList[1],
+        tried: questionList[2],
+        question_1: questionList[3],
+        good_answer: questionList[4],
+        bad_answer_1: questionList[5],
+        bad_answer_11: questionList[6],
+        bad_answer_2: questionList[7],
+        bad_answer_22: questionList[8],
+        bad_answer_3: questionList[9],
+        bad_answer_33: questionList[10]
+        })
+
+    // Save the instance
+    question.save().then(() => {
+        return console.log('question saved'); 
+        });
+}
 
 // APP |----
 app.engine('mustache', mustacheExpress());

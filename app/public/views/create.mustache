@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/default.css">
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!--<link rel="stylesheet" href="../styles/default.css">-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="scripts/create.js"></script>
     <title>JSQuiz</title>
 </head>
 <body>
@@ -18,12 +19,12 @@
         <div>
             <table>
                 <tr>
-                    <td><label for="quiz title"> Quiz Title: </label></td>
-                    <td><input type="text" placeholder="Best movies 2021"></td>
+                    <td><label for="quiz_title"> Quiz Title: </label></td>
+                    <td><input type="text" id="quiz_title" placeholder="Best movies 2021"></td>
                 </tr>
                 <tr>
-                    <td><label for="quiz title"> Category: </label></td>
-                    <td><input type="text" placeholder="Cinema"></td>
+                    <td><label for="quiz_category"> Category: </label></td>
+                    <td><input type="text" id="quiz_category" placeholder="Cinema"></td>
                 </tr>
             </table>
 
@@ -34,19 +35,19 @@
                 <table>
                     <tr>
                         <td><label for="question">Question 1: </label></td>
-                        <td><input type="text" placeholder="Title"></td>
+                        <td><input type="text" id="question1" placeholder="Title"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="A"></td>
+                        <td><input type="text" id="goodAnswer1" placeholder="A"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="B"></td>
+                        <td><input type="text" id="badAnswer1" placeholder="B"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="C"></td>
+                        <td><input type="text" id="badAnswer11" placeholder="C"></td>
                     </tr>
                 </table>
             </div>
@@ -60,19 +61,19 @@
                 <table>
                     <tr>
                         <td><label for="question">Question 2: </label></td>
-                        <td><input type="text" placeholder="Title"></td>
+                        <td><input type="text" id="question2" placeholder="Title"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="A"></td>
+                        <td><input type="text" id="goodAnswer2" placeholder="A"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="B"></td>
+                        <td><input type="text" id="badAnswer2" placeholder="B"></td>
                     </tr>
                     <tr>
                         <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="C"></td>
+                        <td><input type="text" id="badAnswer22" placeholder="C"></td>
                     </tr>
                 </table>
             </div>
@@ -83,33 +84,33 @@
             <div>
                 <br>
                 <br>
-                <table>
-                    <tr>
-                        <td><label for="question">Question 3: </label></td>
-                        <td><input type="text" placeholder="Title"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="A"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="B"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" placeholder="C"></td>
-                    </tr>
-                </table>
+                <form id="form">
+                    <table>
+                        <tr>
+                            <td><label for="question">Question 3: </label></td>
+                            <td><input type="text" id="question3" placeholder="Title"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" id="goodAnswer3" placeholder="A"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" id="badAnswer3" placeholder="B"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" id="badAnswer33" placeholder="C"></td>
+                        </tr>
+                    </table>
+                </form>
             </div>
             <br>
             <br>
 
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </div>
     </div>
-
-    <script src="../scripts/create.js"></script>
 
 
 </body>
