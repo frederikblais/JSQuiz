@@ -1,10 +1,12 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
 const mongoose = require('mongoose');
+const multer = require('multer');
 
 const quiz = require('../data/data.json');
 const db = mongoose.connection;
 const app = express();
+const path = require('path');
 const PORT = 3000;
 
 // DATABASE |----
@@ -22,43 +24,49 @@ let questionSchema = new mongoose.Schema({
     quiz_name: String,
     category: String,
     tried: Number,
-    question_1: String,
-    question_2: String,
-    question_3: String,
-    good_answer_1: String,
-    good_answer_2: String,
-    good_answer_3: String,
-    bad_answer_1: String,
-    bad_answer_11: String,
-    bad_answer_2: String,
-    bad_answer_22: String,
-    bad_answer_3: String,
-    bad_answer_33: String
+    question1: String,
+    question2: String,
+    question3: String,
+    goodanswer1: String,
+    goodanswer2: String,
+    goodanswer3: String,
+    badanswer1: String,
+    badanswer11: String,
+    badanswer2: String,
+    badanswer22: String,
+    badanswer3: String,
+    badanswer33: String
 });
 
-function post(questionList){
-    // create model
-    const questionModel = mongoose.model('Question', questionSchema);
+app.use('/',express.static(__dirname + '/public'));
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
-    let question = new questionModel({
-        quiz_name: questionList[0],
-        category: questionList[1],
-        tried: questionList[2],
-        question_1: questionList[3],
-        good_answer: questionList[4],
-        bad_answer_1: questionList[5],
-        bad_answer_11: questionList[6],
-        bad_answer_2: questionList[7],
-        bad_answer_22: questionList[8],
-        bad_answer_3: questionList[9],
-        bad_answer_33: questionList[10]
-        })
+let questionModel = mongoose.model('question', questionSchema);
 
-    // Save the instance
-    question.save().then(() => {
-        return console.log('question saved'); 
+const storage = multer.diskStorage({
+    //Define where we want to save the uploaded file
+    destination: function(req, file, cb) {
+    cb(null, 'uploads/');
+    },
+    // By default, multer removes file extensions so let's add them back
+    filename: function(req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)); //here we also append a timestamp to the file name
+    }
+});
+
+app.post('/upload-quiz-title', (req, res) => {
+
+    let upload = multer({storage: storage}).single('quiz_title');
+
+    //perform the upload
+    upload(req, res, function(err) {
+        let question = new questionModel(req.body);
+        question.save().then(() =>{
+            console.log('Saved');
+            res.send(`uploaded`)
         });
-}
+    });
+});
 
 // APP |----
 app.engine('mustache', mustacheExpress());

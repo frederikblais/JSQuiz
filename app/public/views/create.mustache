@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="stylesheet" href="../styles/default.css">-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="scripts/create.js"></script>
+    <!-- <script src="scripts/create.js"></script> -->
     <title>JSQuiz</title>
 </head>
 <body>
@@ -17,98 +17,98 @@
 
     <div>
         <div>
-            <table>
-                <tr>
-                    <td><label for="quiz_title"> Quiz Title: </label></td>
-                    <td><input type="text" id="quiz_title" placeholder="Best movies 2021"></td>
-                </tr>
-                <tr>
-                    <td><label for="quiz_category"> Category: </label></td>
-                    <td><input type="text" id="quiz_category" placeholder="Cinema"></td>
-                </tr>
-            </table>
-
-            <!-- Question 1 -->
-            <div>
-                <br>
-                <br>
+            <form method="POST" action="/upload-quiz-title" enctype="multipart/form-data"> <!-- ADD ROUTE TO UPLOAD -->
                 <table>
                     <tr>
-                        <td><label for="question">Question 1: </label></td>
-                        <td><input type="text" id="question1" placeholder="Title"></td>
+                        <td><label for="quiz_title"> Quiz Title: </label></td>
+                        <td><input type="text" placeholder="Best movies 2021" name="quiz_title"></td>
                     </tr>
                     <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="goodAnswer1" placeholder="A"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="badAnswer1" placeholder="B"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="badAnswer11" placeholder="C"></td>
+                        <td><label for="quiz_category"> Category: </label></td>
+                        <td><input type="text" placeholder="Cinema" name="quiz_category"></td>
                     </tr>
                 </table>
-            </div>
-            <br>
-            <br>
 
-            <!-- Question 2 -->
-            <div>
-                <br>
-                <br>
-                <table>
-                    <tr>
-                        <td><label for="question">Question 2: </label></td>
-                        <td><input type="text" id="question2" placeholder="Title"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="goodAnswer2" placeholder="A"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="badAnswer2" placeholder="B"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="answers"></label></td>
-                        <td><input type="text" id="badAnswer22" placeholder="C"></td>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <br>
-
-            <!-- Question 3 -->
-            <div>
-                <br>
-                <br>
-                <form id="form">
+                <!-- Question 1 -->
+                <div>
+                    <br>
+                    <br>
                     <table>
                         <tr>
-                            <td><label for="question">Question 3: </label></td>
-                            <td><input type="text" id="question3" placeholder="Title"></td>
+                            <td><label for="question">Question 1: </label></td>
+                            <td><input type="text" placeholder="Title" name="question1"></td>
                         </tr>
                         <tr>
                             <td><label for="answers"></label></td>
-                            <td><input type="text" id="goodAnswer3" placeholder="A"></td>
+                            <td><input type="text" placeholder="Good Answer" name="goodAnswer1"></td>
                         </tr>
                         <tr>
                             <td><label for="answers"></label></td>
-                            <td><input type="text" id="badAnswer3" placeholder="B"></td>
+                            <td><input type="text" placeholder="Bad Answer" name="badAnswer1"></td>
                         </tr>
                         <tr>
                             <td><label for="answers"></label></td>
-                            <td><input type="text" id="badAnswer33" placeholder="C"></td>
+                            <td><input type="text" placeholder="Bad Answer" name="badAnswer11"></td>
                         </tr>
                     </table>
-                </form>
-            </div>
-            <br>
-            <br>
+                </div>
+                <br>
+                <br>
 
-            <button type="submit">Submit</button>
+                <!-- Question 2 -->
+                <div>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <td><label for="question">Question 2: </label></td>
+                            <td><input type="text" placeholder="Title" name="question2"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" placeholder="Good Answer" name="goodAnswer2"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" placeholder="Bad Answer" name="badAnswer2"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td><input type="text" placeholder="Bad Answer" name="badAnswer22"></td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <br>
+
+                <!-- Question 3 -->
+                <div>
+                    <br>
+                    <br>
+                        <table>
+                            <tr>
+                                <td><label for="question">Question 3: </label></td>
+                                <td><input type="text" id="question3" placeholder="Title" name="question3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="answers"></label></td>
+                                <td><input type="text" placeholder="Good Answer" name="goodAnswer3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="answers"></label></td>
+                                <td><input type="text" placeholder="Bad Answer" name="badAnswer3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="answers"></label></td>
+                                <td><input type="text" placeholder="Bad Answer" name="badAnswer33"></td>
+                            </tr>
+                        </table>
+                </div>
+                <br>
+                <br>
+
+                <input type="submit" value="Upload"></input>
+            </form>
         </div>
     </div>
 
