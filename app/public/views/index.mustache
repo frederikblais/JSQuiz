@@ -12,38 +12,48 @@
     <h1>JSQuiz</h1>
 
     <nav class="menu">
-        <a href="/all">All quiz</a>
         <a href="/create">Create a quiz</a>
         <a href="https://github.com/frederikblais/JSQuiz" target="_blank">GitHub</a>
     </nav>
     <br>
 
-    <h2>Popular quizes</h2>
-    <table>
-        <tr>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Tried</th>
-          <th></th>
-        </tr>
-        {{#quiz}}
-        <tr>
-          <td>{{quiz_name}}</td>
-          <td>{{category}}</td>
-          <td>{{tried}}</td>
-          <td><button>Start</button></td>
-        </tr>
-        {{/quiz}}
-      </table >
+    <h3>Search</h3>
+      <form method="POST" action="/getQuiz">
+          <div>
+              <label>By Title:</label>
+              <input type="text" name="quiz_title" />
+              <br>
+              <br>
+          </div>
+          <div>
+              <input type="submit" value="Search"/>
+          </div>
+      </form>
       <br>
 
-    <h2>Create a Quiz</h2>
+    <h3>Quizes</h3>
+    <table>
+      <thead>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Tried</th>
+        <th></th>
+    </thead>
+    {{#questions}}
+    <tr>
+        <td>{{quiz_title}}</td>
+        <td>{{quiz_category}}</td>
+        <td></td>
+        <td><button>Start</button></td>
+    </tr>
+    {{/questions}}
+    </table>
+
+    <h3>Create a Quiz</h3>
     <a href="/create">
       <button>+</button>
     </a>
     <br>
-
-    <script src="../scripts/trending.js"></script>
 </body>
 <footer>
   <p>Made by: Frederik Blais</p>

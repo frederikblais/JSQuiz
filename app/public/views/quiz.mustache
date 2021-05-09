@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/default.css">
+        <title>{{quiz_title}}</title>
+    </head>
+
+    <body>
+        <a href="/">home</a>
+            <table>
+                <tr>
+                    <td><label for="quiz_title"> Quiz Title: </label></td>
+                    <td>{{quiz_title}}</td>
+                </tr>
+                <tr>
+                    <td><label for="quiz_category"> Category: </label></td>
+                    <td>{{quiz_category}}</td>
+                </tr>
+            </table>
+
+            <!-- Question 1 -->
+            <div>
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <td><label for="question">Question 1: </label></td>
+                        <td>{{question1}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{badAnswer1}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{goodAnswer1}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{badAnswer11}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+
+            <!-- Question 2 -->
+            <div>
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <td><label for="question">Question 2: </label></td>
+                        <td>{{question2}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{goodAnswer2}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{badAnswer2}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="answers"></label></td>
+                        <td>{{badAnswer22}}</td>
+                        <td><input type="radio"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+
+            <!-- Question 3 -->
+            <div>
+                <br>
+                <br>
+                    <table>
+                        <tr>
+                            <td><label for="question">Question 3: </label></td>
+                            <td>{{question3}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td>{{badAnswer33}}</td>
+                            <td><input type="radio"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td>{{goodAnswer3}}</td>
+                            <td><input type="radio"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="answers"></label></td>
+                            <td>{{badAnswer3}}</td>
+                            <td><input type="radio"></td>
+                        </tr>
+                    </table>
+            </div>
+            <br>
+            <br>
+
+            <input type="submit" value="Upload"></input>
+    </body>
+    
+</html>
