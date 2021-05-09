@@ -82,7 +82,6 @@ app.post('/getQuiz', (req, res) => {
 // INDEX |----
 app.get('/', (req, res) => {
     questionModel.find().then(doc => {
-        console.info(JSON.stringify(doc))
         res.render('../public/views/index', {'questions': doc });
     });
 });
